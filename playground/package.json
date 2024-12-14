@@ -6,17 +6,26 @@
     "dev": "vite"
   },
   "dependencies": {
-    "porto": "workspace:*",
+    "@radix-ui/react-slot": "^1.1.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.468.0",
     "ox": "^0.2.2",
+    "porto": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7",
     "viem": "catalog:"
   },
   "devDependencies": {
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
     "globals": "^15.9.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
     "typescript": "^5.5.3",
     "vite": "^5.4.1"
   }
