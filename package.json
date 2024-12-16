@@ -10,6 +10,7 @@
     "changeset:version": "changeset version && pnpm format",
     "check": "biome check . --fix --unsafe",
     "check:build": "tsx ./scripts/prepublish.ts && publint --strict ./src && attw --pack ./src --profile esm-only",
+    "check:knip": "knip --production",
     "check:repo": "sherif",
     "check:size": "size-limit",
     "check:types": "tsc --noEmit",
@@ -17,7 +18,6 @@
     "deps": "pnpx taze -r",
     "dev": "pnpm preconstruct && pnpm --filter playground dev",
     "dev:wagmi": "pnpm preconstruct && pnpm --filter wagmi-example dev",
-    "knip": "knip --production",
     "format": "biome format --write",
     "postinstall": "pnpm preconstruct",
     "preconstruct": "tsx ./scripts/preconstruct.ts",
@@ -52,13 +52,10 @@
     "pre-commit": "pnpm check"
   },
   "knip": {
-    "ignore": [".github/**", "scripts/**", "src/_test/**", "src/package.json"],
-    "ignoreBinaries": ["dev", "only-allow", "printf"],
-    "workspaces": {
-      "src": {
-        "entry": ["index.ts!"]
-      }
-    }
+    "entry": ["src/{index,actions,query,wagmi}.ts!"],
+    "project": ["src/**"],
+    "ignore": ["src/internal/**", "src/generated.ts"],
+    "ignoreDependencies": ["@tanstack/react-query", "react", "wagmi"]
   },
   "size-limit": [
     {
